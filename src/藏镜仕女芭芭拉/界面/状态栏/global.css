@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #120a1e;
+  --bg-card: #1d1130;
+  --bg-panel: #281a3d;
+  --gold: #c9a87c;
+  --gold-light: #f0d6b8;
+  --gold-dim: #7a6348;
+  --crimson: #c0392b;
+  --crimson-light: #ff6b6b;
+  --crimson-glow: rgba(192, 57, 43, 0.3);
+  --text-primary: #e8d5c4;
+  --text-secondary: #8a7b8a;
+  --text-dim: #5a4d5a;
+  --border: #3d2a4a;
+  --mirror: rgba(201, 168, 124, 0.08);
+  --mirror-border: rgba(201, 168, 124, 0.25);
+
+  --font-ui: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Consolas', 'PingFang SC', monospace;
+  --font-round: 'PingFang SC', 'Microsoft YaHei', 'Rounded Mplus 1c', 'Segoe UI', system-ui, sans-serif;
+}

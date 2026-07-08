@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "芭芭拉": {
+      "type": "object",
+      "properties": {
+        "支配欲": {
+          "type": "number"
+        },
+        "愉悦度": {
+          "type": "number"
+        },
+        "兴奋度": {
+          "type": "number"
+        },
+        "当前模式": {
+          "type": "string",
+          "enum": [
+            "温柔诱导",
+            "挑逗试探",
+            "强硬调教",
+            "彻底支配"
+          ]
+        },
+        "耐心": {
+          "type": "number"
+        },
+        "对荧的评价": {
+          "type": "string"
+        },
+        "服装状态": {
+          "type": "object",
+          "properties": {
+            "上身": {
+              "type": "string"
+            },
+            "下身": {
+              "type": "string"
+            },
+            "鞋履": {
+              "type": "string"
+            },
+            "饰品": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "整体完整度": {
+              "type": "number"
+            },
+            "暴露部位": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "束缚状态": {
+              "type": "string",
+              "enum": [
+                "无",
+                "轻度束缚",
+                "中度束缚",
+                "重度束缚"
+              ]
+            }
+          },
+          "required": [
+            "上身",
+            "下身",
+            "鞋履",
+            "整体完整度",
+            "束缚状态"
+          ]
+        }
+      },
+      "required": [
+        "支配欲",
+        "愉悦度",
+        "兴奋度",
+        "当前模式",
+        "耐心",
+        "对荧的评价",
+        "服装状态"
+      ]
+    },
+    "荧": {
+      "type": "object",
+      "properties": {
+        "堕落度": {
+          "type": "number"
+        },
+        "服从度": {
+          "type": "number"
+        },
+        "羞耻心": {
+          "type": "number"
+        },
+        "色欲": {
+          "type": "number"
+        },
+        "理性值": {
+          "type": "number"
+        },
+        "兴奋度": {
+          "type": "number"
+        },
+        "身体开发度": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "部位名"
+          },
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "状态": {
+          "type": "object",
+          "properties": {
+            "标准": {
+              "type": "string",
+              "enum": [
+                "正常",
+                "情动",
+                "发情",
+                "高潮余韵",
+                "失神",
+                "恍惚",
+                "昏睡"
+              ]
+            },
+            "异常": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "标准"
+          ]
+        },
+        "已历玩法": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "玩法名称"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "首次": {
+                "type": "string"
+              },
+              "角色": {
+                "type": "string",
+                "enum": [
+                  "荧受",
+                  "芭芭拉施"
+                ]
+              }
+            },
+            "required": [
+              "首次",
+              "角色"
+            ]
+          }
+        },
+        "服装状态": {
+          "type": "object",
+          "properties": {
+            "上身": {
+              "type": "string"
+            },
+            "下身": {
+              "type": "string"
+            },
+            "鞋履": {
+              "type": "string"
+            },
+            "饰品": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "整体完整度": {
+              "type": "number"
+            },
+            "暴露部位": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "束缚状态": {
+              "type": "string",
+              "enum": [
+                "无",
+                "轻度束缚",
+                "中度束缚",
+                "重度束缚"
+              ]
+            }
+          },
+          "required": [
+            "上身",
+            "下身",
+            "鞋履",
+            "整体完整度",
+            "束缚状态"
+          ]
+        }
+      },
+      "required": [
+        "堕落度",
+        "服从度",
+        "羞耻心",
+        "色欲",
+        "理性值",
+        "兴奋度",
+        "状态",
+        "服装状态"
+      ]
+    },
+    "环境": {
+      "type": "object",
+      "properties": {
+        "当前场景": {
+          "type": "string",
+          "enum": [
+            "风起地",
+            "果酒湖岸边",
+            "天使的馈赠",
+            "猎鹿人餐馆",
+            "西风大教堂",
+            "低语森林深处",
+            "清泉镇温泉",
+            "教堂地下室",
+            "西风图书馆禁书区",
+            "摘星崖顶峰",
+            "血肉洞穴",
+            "水镜之间",
+            "愚人众的据点",
+            "丘丘人的部落",
+            "审讯室"
+          ]
+        },
+        "私密等级": {
+          "type": "number"
+        },
+        "当前道具": {
+          "default": null,
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "剧情阶段": {
+          "type": "string",
+          "enum": [
+            "初遇期",
+            "试探期",
+            "调教期",
+            "沉溺期",
+            "奴役期"
+          ]
+        },
+        "时间": {
+          "type": "string",
+          "enum": [
+            "黎明",
+            "午后",
+            "傍晚",
+            "子夜"
+          ]
+        }
+      },
+      "required": [
+        "当前场景",
+        "私密等级",
+        "剧情阶段",
+        "时间"
+      ]
+    }
+  },
+  "required": [
+    "芭芭拉",
+    "荧",
+    "环境"
+  ]
+}
