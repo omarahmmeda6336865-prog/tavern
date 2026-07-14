@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前天数": {
+          "type": "number"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "当前篇章": {
+          "type": "string"
+        },
+        "小节记录": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "小节名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "小节描述"
+          }
+        }
+      },
+      "required": [
+        "当前天数",
+        "当前地点",
+        "当前篇章",
+        "小节记录"
+      ]
+    },
+    "仕女团": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "激活的仕女名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "当前状态": {
+            "type": "string"
+          },
+          "着装": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "上身",
+                "下身",
+                "腿部与鞋履",
+                "手部",
+                "内衣",
+                "装饰"
+              ]
+            },
+            "additionalProperties": {
+              "type": "string",
+              "description": "着装描述"
+            },
+            "required": [
+              "上身",
+              "下身",
+              "腿部与鞋履",
+              "手部",
+              "内衣",
+              "装饰"
+            ]
+          },
+          "持有镜具": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "镜具名"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "描述": {
+                  "type": "string"
+                },
+                "效果": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "描述",
+                "效果"
+              ]
+            }
+          }
+        },
+        "required": [
+          "当前状态",
+          "着装",
+          "持有镜具"
+        ]
+      }
+    },
+    "目标角色": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色姓名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "堕落值": {
+            "type": "number"
+          },
+          "依存值": {
+            "type": "number"
+          },
+          "口唇开发度": {
+            "type": "number"
+          },
+          "双乳开发度": {
+            "type": "number"
+          },
+          "阴部开发度": {
+            "type": "number"
+          },
+          "后庭开发度": {
+            "type": "number"
+          },
+          "羞耻心": {
+            "type": "number"
+          },
+          "神之眼": {
+            "type": "string"
+          },
+          "当前心境": {
+            "type": "string"
+          },
+          "着装": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "上身",
+                "下身",
+                "腿部与鞋履",
+                "手部",
+                "内衣",
+                "装饰"
+              ]
+            },
+            "additionalProperties": {
+              "type": "string",
+              "description": "着装描述"
+            },
+            "required": [
+              "上身",
+              "下身",
+              "腿部与鞋履",
+              "手部",
+              "内衣",
+              "装饰"
+            ]
+          },
+          "身体状态": {
+            "type": "object",
+            "propertyNames": {
+              "type": "number",
+              "description": "持续轮数"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "description": "状态描述"
+            }
+          },
+          "称号": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "称号名"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "效果": {
+                  "type": "string"
+                },
+                "自我评价": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "效果",
+                "自我评价"
+              ]
+            }
+          },
+          "社交可疑度": {
+            "type": "number"
+          },
+          "关键记忆": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "description": "记忆名"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "description": "记忆描述"
+            }
+          }
+        },
+        "required": [
+          "堕落值",
+          "依存值",
+          "口唇开发度",
+          "双乳开发度",
+          "阴部开发度",
+          "后庭开发度",
+          "羞耻心",
+          "神之眼",
+          "当前心境",
+          "着装",
+          "身体状态",
+          "称号",
+          "社交可疑度",
+          "关键记忆"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "仕女团",
+    "目标角色"
+  ]
+}

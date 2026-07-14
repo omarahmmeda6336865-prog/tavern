@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+SC:wght@300;400;600;700&family=ZCOOL+XiaoWei&family=Courier+Prime:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-deep-ice: #1a2332;
+  --c-slate: #2c3e50;
+  --c-ice-blue: #5b9bd5;
+  --c-mist: #b8d4e8;
+  --c-frost: #e8f0f8;
+  --c-corruption: #c0392b;
+  --c-gold: #d4a63a;
+  --c-soft-red: #e74c3c;
+  --c-soft-pink: #f0a0b0;
+
+  --font-title: 'Cinzel', 'Noto Serif SC', serif;
+  --font-body: 'Noto Serif SC', 'Microsoft YaHei', serif;
+  --font-accent: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+}
