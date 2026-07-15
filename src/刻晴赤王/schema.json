@@ -3,15 +3,19 @@
   "type": "object",
   "properties": {
     "世界": {
+      "default": {},
       "type": "object",
       "properties": {
         "当前时间": {
+          "default": "璃月历·某日 深夜",
           "type": "string"
         },
         "当前地点": {
+          "default": "璃月港·刻晴的私人宅邸·卧房内",
           "type": "string"
         },
         "在场人物": {
+          "default": {},
           "type": "object",
           "propertyNames": {
             "type": "string",
@@ -22,49 +26,47 @@
             "description": "人物状态描述"
           }
         }
-      },
-      "required": [
-        "当前时间",
-        "当前地点",
-        "在场人物"
-      ]
+      }
     },
     "核心意识": {
       "type": "object",
       "properties": {
         "堕落度": {
+          "default": 5,
           "type": "number"
         },
         "意识清醒度": {
+          "default": 100,
           "type": "number"
         },
         "抵抗意识": {
+          "default": 80,
           "type": "number"
         },
         "内心独白": {
+          "default": "",
           "type": "string"
         }
-      },
-      "required": [
-        "堕落度",
-        "意识清醒度",
-        "抵抗意识",
-        "内心独白"
-      ]
+      }
     },
     "身体状态": {
+      "default": {},
       "type": "object",
       "properties": {
         "开发度": {
+          "default": 0,
           "type": "number"
         },
         "异常状态": {
+          "default": "",
           "type": "string"
         },
         "当前行为": {
+          "default": "",
           "type": "string"
         },
         "观感": {
+          "default": {},
           "type": "object",
           "propertyNames": {
             "type": "string",
@@ -77,8 +79,9 @@
             ]
           },
           "additionalProperties": {
-            "type": "string",
-            "description": "当前部位状态描述"
+            "description": "当前部位状态描述",
+            "default": "",
+            "$ref": "#/$defs/__schema0"
           },
           "required": [
             "整体",
@@ -88,62 +91,55 @@
             "面部"
           ]
         }
-      },
-      "required": [
-        "开发度",
-        "异常状态",
-        "当前行为",
-        "观感"
-      ]
+      }
     },
     "服饰": {
+      "default": {},
       "type": "object",
       "properties": {
         "整体": {
+          "default": "",
           "type": "string"
         },
         "内衣": {
+          "default": "",
           "type": "string"
         },
         "配件": {
+          "default": {},
           "type": "object",
           "properties": {
             "手部": {
+              "default": "",
               "type": "string"
             },
             "腿部与鞋履": {
+              "default": "",
               "type": "string"
             },
             "饰品": {
+              "default": "",
               "type": "string"
             },
             "神之眼": {
+              "default": "",
               "type": "string"
             },
             "身体改造物": {
+              "default": "",
               "type": "string"
             }
-          },
-          "required": [
-            "手部",
-            "腿部与鞋履",
-            "饰品",
-            "神之眼",
-            "身体改造物"
-          ]
+          }
         }
-      },
-      "required": [
-        "整体",
-        "内衣",
-        "配件"
-      ]
+      }
     }
   },
   "required": [
-    "世界",
-    "核心意识",
-    "身体状态",
-    "服饰"
-  ]
+    "核心意识"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "string"
+    }
+  }
 }
