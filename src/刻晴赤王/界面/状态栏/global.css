@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep: #1a1008;
+  --bg-panel: #2d1f0e;
+  --bg-card: #3d2b1f;
+  --bg-elevated: #4a3424;
+  --gold: #c9a04e;
+  --gold-light: #e8c878;
+  --gold-dark: #8b6914;
+  --crimson: #8b2252;
+  --crimson-light: #c9335a;
+  --text-primary: #d4c4a8;
+  --text-secondary: #a09070;
+  --text-dim: #706050;
+  --border-gold: #8b6914;
+  --border-dim: #4a3424;
+  --font-main: 'Courier New', 'Microsoft YaHei', monospace;
+}
