@@ -272,7 +272,7 @@
       启用: true
       查找表达式: /<choice name="([^"]*)">([^<]*)<\/choice>/g
       内容: |-
-        <button class="st-choice-btn" onclick="event.stopPropagation(); const t=document.querySelector('#send_textarea'); if(t){t.value='$1：$2'; t.dispatchEvent(new Event('input',{bubbles:true})); setTimeout(()=>{ const b=document.querySelector('#send_but'); if(b)b.click(); },50); }"><span class="choice-icon">&#9654;</span> <span class="choice-name">$1</span><br>$2</button>
+        <button class="st-choice-btn" onclick="event.stopPropagation(); const t=document.querySelector('#send_textarea'); if(t){t.value='$1：$2'; t.dispatchEvent(new Event('input',{bubbles:true})); t.focus(); }"><span class="choice-icon">&#9654;</span> <span class="choice-name">$1</span><br>$2</button>
       来源:
         用户输入: false
         AI输出: true
