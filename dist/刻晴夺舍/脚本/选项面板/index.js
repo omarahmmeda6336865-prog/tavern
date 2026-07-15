@@ -1,0 +1,2 @@
+$(async()=>{const e=()=>{$(document).off('click','.choice-btn').on('click','.choice-btn',async function(){const e=$(this).data('choice-text');if(!e)return;$(this).closest('.mes').find('.choice-group').replaceWith(`<div class="choice-chosen"><em>已选择：${e}</em></div>`),await triggerSlash(`/send ${e}`),await triggerSlash('/trigger')})};e();new MutationObserver(()=>e()).observe(document.body,{childList:!0,subtree:!0})});
+//# sourceMappingURL=index.js.map

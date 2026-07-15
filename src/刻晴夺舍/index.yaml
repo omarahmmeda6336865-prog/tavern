@@ -187,6 +187,32 @@
         仅格式显示: true
         仅格式提示词: false
 
+      - 正则名称: '[选项]去除选项块'
+      id: a3f7c9d1-8b2e-4e15-9a6d-1f3e5c7b8a9d
+      启用: true
+      查找表达式: /<choice>[\s\S]*?<\/choice>/gi
+      替换为: ''
+      来源:
+        用户输入: true
+        AI输出: true
+      作用于:
+        仅格式显示: false
+        仅格式提示词: true
+
+    - 正则名称: '[选项]包裹为容器'
+      id: b4f8d0e2-9c3f-5e26-0b7e-2f4e6c8b0a9e
+      启用: true
+      查找表达式: /<choice>([\s\S]*?)<\/choice>/gi
+      替换为: |-
+        <div class="choice-group" data-choice-raw="$1">
+        </div>
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
   酒馆助手:
     脚本库:
       - 名称: mvu
@@ -202,3 +228,10 @@
         类型: 脚本
         内容: |-
           import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴夺舍/脚本/变量结构/index.js';
+
+      - 名称: 选项面板
+        id: d6f0e2f4-1e5f-7f48-2d9f-4f6e8c9b1b0f
+        启用: true
+        类型: 脚本
+        内容: |-
+          import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴夺舍/脚本/选项面板/index.js';

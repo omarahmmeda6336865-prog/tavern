@@ -11,7 +11,8 @@ $(async () => {
 
   // 监听 MVU 变量更新事件：AI 输出触发变量变化时立即同步 store
   eventOn(Mvu.events.VARIABLE_UPDATE_ENDED, () => {
-    const stat_data = _.get(getVariables({ type: 'message', message_id: getCurrentMessageId() }), 'stat_data');
+    const variables = Mvu.getMvuData({ type: 'message', message_id: 'latest' });
+    const stat_data = _.get(variables, 'stat_data');
     if (stat_data) {
       const result = Schema.safeParse(stat_data);
       if (result.success) {
