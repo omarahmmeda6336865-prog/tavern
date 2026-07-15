@@ -1,6 +1,9 @@
 <template>
   <div class="world-header">
-    <div class="location">
+    <div class="time-loc">
+      <span class="icon">&#x1F551;</span>
+      <span class="time-text">{{ store.data.世界.当前时间 || '——' }}</span>
+      <span class="loc-sep">|</span>
       <span class="icon">&#x2316;</span>
       <span>{{ store.data.世界.当前地点 }}</span>
     </div>
@@ -28,7 +31,23 @@ const store = useDataStore();
   gap: 4px;
 }
 
-.location,
+.time-loc {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--c-text);
+}
+
+.time-text {
+  color: var(--c-gold);
+}
+
+.loc-sep {
+  color: var(--c-border);
+  margin: 0 2px;
+}
+
 .people {
   display: flex;
   align-items: flex-start;

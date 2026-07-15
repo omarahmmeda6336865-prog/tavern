@@ -60,6 +60,7 @@
         其他: '神之眼、乳钉（金色赤王纹饰）',
       },
       世界: {
+        当前时间: '提瓦特历-2026/07/15-14:30',
         当前地点: '须弥城·大巴扎集市',
         在场人物: '路过的须弥商贩、学者和佣兵',
       },
@@ -80,7 +81,10 @@
       template: `
         <div class="card">
           <div class="world-header">
-            <div class="location">
+            <div class="time-loc">
+              <span class="icon">&#x1F551;</span>
+              <span class="time-text">{{ store.世界.当前时间 || '——' }}</span>
+              <span class="loc-sep">|</span>
               <span class="icon">&#x2316;</span>
               <span>{{ store.世界.当前地点 }}</span>
             </div>
@@ -257,6 +261,21 @@
         border-bottom: 1px solid var(--c-border);
         flex-wrap: wrap;
         gap: 4px;
+      }
+
+      .time-loc {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        color: var(--c-text);
+      }
+
+      .time-text { color: var(--c-gold); }
+
+      .loc-sep {
+        color: var(--c-border);
+        margin: 0 2px;
       }
 
       .location, .people {

@@ -30,6 +30,7 @@ export const Schema = z.object({
   }).prefault({}),
 
   世界: z.object({
+    当前时间: z.string().prefault(''),
     当前地点: z.string().prefault('璃月港'),
     在场人物: z.string().prefault(''),
   }).prefault({}),

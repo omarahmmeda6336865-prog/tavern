@@ -108,6 +108,10 @@
       "default": {},
       "type": "object",
       "properties": {
+        "当前时间": {
+          "default": "",
+          "type": "string"
+        },
         "当前地点": {
           "default": "璃月港",
           "type": "string"
