@@ -260,6 +260,25 @@
         <div class="st-choices-bar">
         $1
         </div>
+        <script>
+        (function(){
+          if (window.__st_choices_bound) return;
+          window.__st_choices_bound = true;
+          $(document).on('click', '.st-choice-btn', function(e){
+            e.stopPropagation();
+            var text = $(this).attr('data-choice-text');
+            if (!text) return;
+            var ta = document.querySelector('#send_textarea');
+            if (!ta) { console.warn('[choices] #send_textarea not found'); return; }
+            ta.value = text;
+            ta.dispatchEvent(new Event('input', { bubbles: true }));
+            setTimeout(function(){
+              var btn = document.querySelector('#send_but');
+              if (btn) btn.click();
+            }, 80);
+          });
+        })();
+        </script>
       来源:
         用户输入: false
         AI输出: true
@@ -272,7 +291,7 @@
       启用: true
       查找表达式: /<choice name="([^"]*)">([^<]*)<\/choice>/g
       内容: |-
-        <button class="st-choice-btn" onclick="event.stopPropagation(); const t=document.querySelector('#send_textarea'); if(t){t.value='$1：$2'; t.dispatchEvent(new Event('input',{bubbles:true})); t.focus(); }"><span class="choice-icon">&#9654;</span> <span class="choice-name">$1</span><br>$2</button>
+        <button class="st-choice-btn" data-choice-text="$1：$2"><span class="choice-icon">&#9654;</span> <span class="choice-name">$1</span><br>$2</button>
       来源:
         用户输入: false
         AI输出: true

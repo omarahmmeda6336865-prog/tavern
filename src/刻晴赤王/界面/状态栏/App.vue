@@ -37,14 +37,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useLocalStorage } from '@vueuse/core';
-import { useDataStore } from './store';
+import { computed } from 'vue';
+import AttirePanel from './components/AttirePanel.vue';
 import CoreStatus from './components/CoreStatus.vue';
 import HeaderBar from './components/HeaderBar.vue';
 import SensePanel from './components/SensePanel.vue';
-import AttirePanel from './components/AttirePanel.vue';
 import WorldPanel from './components/WorldPanel.vue';
+import { useDataStore } from './store';
 
 const store = useDataStore();
 const expanded = useLocalStorage('keqing:ui_expanded', true);
