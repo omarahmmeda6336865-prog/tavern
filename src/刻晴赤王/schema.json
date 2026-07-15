@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前地点": {
+          "type": "string"
+        },
+        "在场人物": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "人物名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "人物状态描述"
+          }
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前地点",
+        "在场人物"
+      ]
+    },
+    "核心意识": {
+      "type": "object",
+      "properties": {
+        "堕落度": {
+          "type": "number"
+        },
+        "意识清醒度": {
+          "type": "number"
+        },
+        "抵抗意识": {
+          "type": "number"
+        },
+        "内心独白": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "堕落度",
+        "意识清醒度",
+        "抵抗意识",
+        "内心独白"
+      ]
+    },
+    "身体状态": {
+      "type": "object",
+      "properties": {
+        "开发度": {
+          "type": "number"
+        },
+        "异常状态": {
+          "type": "string"
+        },
+        "当前行为": {
+          "type": "string"
+        },
+        "观感": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "整体",
+              "乳房",
+              "臀部",
+              "股间",
+              "面部"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "当前部位状态描述"
+          },
+          "required": [
+            "整体",
+            "乳房",
+            "臀部",
+            "股间",
+            "面部"
+          ]
+        }
+      },
+      "required": [
+        "开发度",
+        "异常状态",
+        "当前行为",
+        "观感"
+      ]
+    },
+    "服饰": {
+      "type": "object",
+      "properties": {
+        "整体": {
+          "type": "string"
+        },
+        "内衣": {
+          "type": "string"
+        },
+        "配件": {
+          "type": "object",
+          "properties": {
+            "手部": {
+              "type": "string"
+            },
+            "腿部与鞋履": {
+              "type": "string"
+            },
+            "饰品": {
+              "type": "string"
+            },
+            "神之眼": {
+              "type": "string"
+            },
+            "身体改造物": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "手部",
+            "腿部与鞋履",
+            "饰品",
+            "神之眼",
+            "身体改造物"
+          ]
+        }
+      },
+      "required": [
+        "整体",
+        "内衣",
+        "配件"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "核心意识",
+    "身体状态",
+    "服饰"
+  ]
+}
