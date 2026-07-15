@@ -9,6 +9,12 @@
       - remove
       - move
     - don't update field names starts with `_` as they are readonly, such as `_变量`
+    - operation type selection rules:
+      - USE "delta" FOR ALL NUMBER-TYPE VARIABLES: 堕落度, 意识清醒度, 抵抗意识, 开发度
+      - USE "replace" FOR ALL STRING-TYPE VARIABLES: 内心独白, 异常状态, 当前行为, 整体/乳房/臀部/股间/面部 (观感), 整体/内衣/手部/腿部与鞋履/饰品/神之眼/身体改造物 (服饰), 当前时间, 当前地点, 在场人物键值
+      - USE "insert" or "remove" FOR adding or removing keys in 在场人物
+      - NEVER use "replace" on a number variable (堕落度/意识清醒度/抵抗意识/开发度) — always use "delta"
+      - NEVER use "delta" on a string variable — always use "replace"
   format: |-
     <UpdateVariable>
     <Analysis>$(IN ENGLISH, no more than 80 words)
@@ -18,8 +24,8 @@
     </Analysis>
     <JSONPatch>
     [
-      { "op": "replace", "path": "${/path/to/variable}", "value": "${new_value}" },
-      { "op": "delta", "path": "${/path/to/number/variable}", "value": "${positive_or_negative_delta}" },
+      { "op": "replace", "path": "${/path/to/string/variable}", "value": "${new_string_value}" },
+      { "op": "delta", "path": "${/path/to/number/variable}", "value": ${positive_or_negative_delta_number} },
       { "op": "insert", "path": "${/path/to/object/new_key}", "value": "${new_value}" },
       { "op": "insert", "path": "${/path/to/array/-}", "value": "${new_value}" },
       { "op": "remove", "path": "${/path/to/object/key}" },
