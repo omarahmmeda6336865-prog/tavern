@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "附身": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "主导意识": {
+          "default": "阿赫玛尔",
+          "type": "string",
+          "enum": [
+            "阿赫玛尔",
+            "刻晴",
+            "争夺中"
+          ]
+        },
+        "附身深度": {
+          "default": 100,
+          "type": "number"
+        }
+      }
+    },
+    "刻晴": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "意识清醒度": {
+          "default": 100,
+          "type": "number"
+        },
+        "抵抗意志": {
+          "default": 80,
+          "type": "number"
+        },
+        "当前感受": {
+          "default": "被囚禁在神之眼中，眼睁睁看着自己的身体被赤王肆意摆布",
+          "type": "string"
+        }
+      }
+    },
+    "身体": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "快感度": {
+          "default": 0,
+          "type": "number"
+        },
+        "异常状态": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "状态名"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "效果描述"
+          }
+        },
+        "当前行为": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    },
+    "服饰": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "整体": {
+          "default": "刻晴的默认璃月服饰",
+          "type": "string"
+        },
+        "内衣": {
+          "default": "",
+          "type": "string"
+        },
+        "配件": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "手部",
+              "腿部与鞋履",
+              "饰品"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "description": "穿戴描述"
+          },
+          "required": [
+            "手部",
+            "腿部与鞋履",
+            "饰品"
+          ]
+        },
+        "其他": {
+          "default": "神之眼",
+          "type": "string"
+        }
+      }
+    },
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前地点": {
+          "default": "璃月港",
+          "type": "string"
+        },
+        "在场人物": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
