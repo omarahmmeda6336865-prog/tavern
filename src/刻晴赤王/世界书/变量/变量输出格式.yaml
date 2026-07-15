@@ -24,14 +24,30 @@
     </Analysis>
     <JSONPatch>
     [
-      { "op": "replace", "path": "${/path/to/string/variable}", "value": "${new_string_value}" },
-      { "op": "delta", "path": "${/path/to/number/variable}", "value": ${positive_or_negative_delta_number} },
-      { "op": "insert", "path": "${/path/to/object/new_key}", "value": "${new_value}" },
-      { "op": "insert", "path": "${/path/to/array/-}", "value": "${new_value}" },
-      { "op": "remove", "path": "${/path/to/object/key}" },
-      { "op": "remove", "path": "${/path/to/array/0}" },
-      { "op": "move", "from": "${/path/to/variable}", "to": "${/path/to/another/path}" },
-      ...
+    // NUMBERS — ALWAYS use "delta", NEVER use "replace" or "insert":
+    //   堕落度, 意识清醒度, 抵抗意识, 开发度
+    //   Example: { "op": "delta", "path": "/核心意识/堕落度", "value": 2 }
+    //
+    // STRINGS — ALWAYS use "replace", NEVER use "delta":
+    //   内心独白, 异常状态, 当前行为, 当前时间, 当前地点,
+    //   观感.整体/乳房/臀部/股间/面部,
+    //   服饰.整体/内衣, 配件.手部/腿部与鞋履/饰品/神之眼/身体改造物,
+    //   在场人物.${人物名}
+    //   Example: { "op": "replace", "path": "/核心意识/内心独白", "value": "..." }
+    //
+    // OBJECT KEYS — use "insert"/"remove" for adding/removing characters:
+    //   Example: { "op": "insert", "path": "/世界/在场人物/甘雨", "value": "..." }
+    { "op": "delta",   "path": "/核心意识/堕落度",     "value": 0 },
+    { "op": "delta",   "path": "/核心意识/意识清醒度", "value": 0 },
+    { "op": "delta",   "path": "/核心意识/抵抗意识",   "value": 0 },
+    { "op": "delta",   "path": "/身体状态/开发度",     "value": 0 },
+    { "op": "replace", "path": "/核心意识/内心独白",     "value": "..." },
+    { "op": "replace", "path": "/身体状态/异常状态",     "value": "..." },
+    { "op": "replace", "path": "/身体状态/当前行为",     "value": "..." },
+    { "op": "replace", "path": "/世界/当前时间",         "value": "..." },
+    { "op": "replace", "path": "/世界/当前地点",         "value": "..." },
+    { "op": "replace", "path": "/身体状态/观感/整体",    "value": "..." },
+    { "op": "replace", "path": "/服饰/整体",             "value": "..." }
     ]
     </JSONPatch>
     </UpdateVariable>
