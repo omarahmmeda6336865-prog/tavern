@@ -96,20 +96,6 @@
           不可激活其他条目: true
         文件: 世界书/变量/变量输出格式
 
-      - 名称: '[mvu_update]选项输出格式'
-        启用: true
-        激活策略:
-          类型: 蓝灯
-        插入位置:
-          类型: 指定深度
-          角色: 系统
-          深度: 0
-          顺序: 14720
-        递归:
-          不可被其他条目激活: true
-          不可激活其他条目: true
-        文件: 世界书/变量/选项输出格式
-
       - 名称: ===变量结束===
         <<: *分隔符
 
@@ -194,104 +180,6 @@
         </script>
         </body>
         ```
-      来源:
-        用户输入: false
-        AI输出: true
-      作用于:
-        仅格式显示: true
-        仅格式提示词: false
-
-    - 正则名称: '[不发送]去除未选选项'
-      id: e7a1b2c4-d5e6-7890-abcd-ef1234567890
-      启用: true
-      查找表达式: /<choices>[\s\S]*?<\/choices>/g
-      内容: ''
-      来源:
-        用户输入: false
-        AI输出: true
-      作用于:
-        仅格式显示: false
-        仅格式提示词: true
-
-    - 正则名称: '[界面]选项按钮'
-      id: f9b8a7c6-d5e4-3210-fedc-ba9876543210
-      启用: true
-      查找表达式: /<choices>([\s\S]*?)<\/choices>/g
-      内容: |-
-        <style>
-        .st-choices-bar {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          padding: 10px 0;
-          border-top: 1px solid var(--border-gold, #8b6914);
-          margin-top: 8px;
-        }
-        .st-choice-btn {
-          flex: 1 1 180px;
-          padding: 10px 12px;
-          border: 1px solid #c9a04e;
-          background: rgba(201, 160, 78, 0.08);
-          color: #d4c4a8;
-          font-family: inherit;
-          font-size: 13px;
-          cursor: pointer;
-          text-align: left;
-          line-height: 1.4;
-          transition: all 0.2s;
-          border-radius: 4px;
-        }
-        .st-choice-btn:hover {
-          background: rgba(201, 160, 78, 0.2);
-          border-color: #e8c878;
-          color: #e8c878;
-        }
-        .st-choice-btn .choice-icon {
-          display: block;
-          font-size: 11px;
-          color: #8b6914;
-          margin-bottom: 3px;
-        }
-        .st-choice-btn .choice-name {
-          font-weight: bold;
-          color: #e8c878;
-        }
-        </style>
-        <div class="st-choices-bar">
-        $1
-        </div>
-        <script>
-        (function(){
-          if (window.__st_choices_bound) return;
-          window.__st_choices_bound = true;
-          $(document).on('click', '.st-choice-btn', function(e){
-            e.stopPropagation();
-            var text = $(this).attr('data-choice-text');
-            if (!text) return;
-            var ta = document.querySelector('#send_textarea');
-            if (!ta) { console.warn('[choices] #send_textarea not found'); return; }
-            ta.value = text;
-            ta.dispatchEvent(new Event('input', { bubbles: true }));
-            setTimeout(function(){
-              var btn = document.querySelector('#send_but');
-              if (btn) btn.click();
-            }, 80);
-          });
-        })();
-        </script>
-      来源:
-        用户输入: false
-        AI输出: true
-      作用于:
-        仅格式显示: true
-        仅格式提示词: false
-
-    - 正则名称: '[界面]选项按钮-内层choice'
-      id: a1b2c3d4-e5f6-7890-1234-567890abcdef
-      启用: true
-      查找表达式: /<choice name="([^"]*)">([^<]*)<\/choice>/g
-      内容: |-
-        <button class="st-choice-btn" data-choice-text="$1：$2"><span class="choice-icon">&#9654;</span> <span class="choice-name">$1</span><br>$2</button>
       来源:
         用户输入: false
         AI输出: true
