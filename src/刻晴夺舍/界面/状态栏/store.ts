@@ -37,4 +37,4 @@ export const MOCK_INIT_DATA: Schema = {
   },
 };
 
-export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: getCurrentMessageId() });
+export const useDataStore = defineMvuDataStore(Schema, { type: 'message', message_id: 'latest' });
