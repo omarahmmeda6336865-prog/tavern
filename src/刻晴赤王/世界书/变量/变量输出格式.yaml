@@ -1,58 +1,38 @@
 ---
 变量输出格式:
   rule:
-    - you must output the update analysis and the actual update commands at once in the end of the next reply
-    - the update commands works like the **JSON Patch (RFC 6902)** standard, must be a valid JSON array containing operation objects, but supports the following operations instead:
-      - replace: replace the value of existing paths
-      - delta: update the value of existing number paths by a delta value
-      - insert: insert new items into an object or array (using `-` as array index intends appending to the end)
-      - remove
-      - move
-    - don't update field names starts with `_` as they are readonly, such as `_变量`
-    - operation type selection rules:
-      - USE "delta" FOR ALL NUMBER-TYPE VARIABLES: 堕落度, 意识清醒度, 抵抗意识, 开发度
-      - USE "replace" FOR ALL STRING-TYPE VARIABLES: 内心独白, 异常状态, 当前行为, 整体/乳房/臀部/股间/面部 (观感), 整体/内衣/手部/腿部与鞋履/饰品/神之眼/身体改造物 (服饰), 当前时间, 当前地点, 在场人物键值
-      - USE "insert" or "remove" FOR adding or removing keys in 在场人物
-      - NEVER use "replace" on a number variable (堕落度/意识清醒度/抵抗意识/开发度) — always use "delta"
-      - NEVER use "delta" on a string variable — always use "replace"
+    - 每次回复末尾必须输出 <UpdateVariable> 块，这是强制要求
+    - delta 操作仅用于数值变量: 堕落度, 意识清醒度, 抵抗意识, 开发度
+    - replace 操作用于所有字符串变量: 内心独白, 异常状态, 当前行为, 观感.*, 服饰.*, 世界.当前时间/当前地点, 在场人物.*
+    - insert/remove 用于在场人物的增删
+    - 禁止对数值变量使用 replace，禁止对字符串变量使用 delta
+    - 不要更新以 _ 开头的只读字段
   format: |-
     <UpdateVariable>
-    <Analysis>$(IN ENGLISH, no more than 80 words)
-    - ${calculate time passed: ...}
-    - ${decide whether dramatic updates are allowed as it's in a special case or the time passed is more than usual: yes/no}
-    - ${analyze every variable based on its corresponding `check`, according only to current reply instead of previous plots: ...}
-    </Analysis>
-    <!--
-    OP-TYPE RULES (MUST FOLLOW):
-    delta   → /核心意识/堕落度, /核心意识/意识清醒度, /核心意识/抵抗意识, /身体状态/开发度
-    replace → /核心意识/内心独白, /身体状态/异常状态, /身体状态/当前行为, /身体状态/观感/*, /服饰/*, /世界/*, /世界/在场人物/*
-    insert  → /世界/在场人物/${new_char}
-    remove  → /世界/在场人物/${old_char}
-    NEVER put "replace" op on a number path. NEVER put "delta" op on a string path.
-    -->
+    <Analysis>$(英文简要分析)</Analysis>
     <JSONPatch>
     [
-    { "op": "delta",   "path": "/核心意识/堕落度",     "value": 0 },
-    { "op": "delta",   "path": "/核心意识/意识清醒度", "value": 0 },
-    { "op": "delta",   "path": "/核心意识/抵抗意识",   "value": 0 },
-    { "op": "delta",   "path": "/身体状态/开发度",     "value": 0 },
-    { "op": "replace", "path": "/核心意识/内心独白",     "value": "" },
-    { "op": "replace", "path": "/身体状态/异常状态",     "value": "" },
-    { "op": "replace", "path": "/身体状态/当前行为",     "value": "" },
-    { "op": "replace", "path": "/世界/当前时间",         "value": "" },
-    { "op": "replace", "path": "/世界/当前地点",         "value": "" },
-    { "op": "replace", "path": "/身体状态/观感/整体",    "value": "" },
-    { "op": "replace", "path": "/服饰/整体",             "value": "" },
-    { "op": "replace", "path": "/身体状态/观感/乳房",    "value": "" },
-    { "op": "replace", "path": "/身体状态/观感/臀部",    "value": "" },
-    { "op": "replace", "path": "/身体状态/观感/股间",    "value": "" },
-    { "op": "replace", "path": "/身体状态/观感/面部",    "value": "" },
-    { "op": "replace", "path": "/服饰/内衣",             "value": "" },
-    { "op": "replace", "path": "/服饰/配件/手部",        "value": "" },
-    { "op": "replace", "path": "/服饰/配件/腿部与鞋履",  "value": "" },
-    { "op": "replace", "path": "/服饰/配件/饰品",        "value": "" },
-    { "op": "replace", "path": "/服饰/配件/神之眼",      "value": "" },
-    { "op": "replace", "path": "/服饰/配件/身体改造物",  "value": "" }
+      { "op": "delta",   "path": "/核心意识/堕落度",     "value": 0 },
+      { "op": "delta",   "path": "/核心意识/意识清醒度", "value": 0 },
+      { "op": "delta",   "path": "/核心意识/抵抗意识",   "value": 0 },
+      { "op": "delta",   "path": "/身体状态/开发度",     "value": 0 },
+      { "op": "replace", "path": "/核心意识/内心独白",     "value": "" },
+      { "op": "replace", "path": "/身体状态/异常状态",     "value": "" },
+      { "op": "replace", "path": "/身体状态/当前行为",     "value": "" },
+      { "op": "replace", "path": "/世界/当前时间",         "value": "" },
+      { "op": "replace", "path": "/世界/当前地点",         "value": "" },
+      { "op": "replace", "path": "/身体状态/观感/整体",    "value": "" },
+      { "op": "replace", "path": "/身体状态/观感/乳房",    "value": "" },
+      { "op": "replace", "path": "/身体状态/观感/臀部",    "value": "" },
+      { "op": "replace", "path": "/身体状态/观感/股间",    "value": "" },
+      { "op": "replace", "path": "/身体状态/观感/面部",    "value": "" },
+      { "op": "replace", "path": "/服饰/整体",             "value": "" },
+      { "op": "replace", "path": "/服饰/内衣",             "value": "" },
+      { "op": "replace", "path": "/服饰/配件/手部",        "value": "" },
+      { "op": "replace", "path": "/服饰/配件/腿部与鞋履",  "value": "" },
+      { "op": "replace", "path": "/服饰/配件/饰品",        "value": "" },
+      { "op": "replace", "path": "/服饰/配件/神之眼",      "value": "" },
+      { "op": "replace", "path": "/服饰/配件/身体改造物",  "value": "" }
     ]
     </JSONPatch>
     </UpdateVariable>

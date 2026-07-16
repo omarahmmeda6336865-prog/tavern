@@ -209,6 +209,13 @@
         内容: |-
           import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴赤王/脚本/变量结构/index.js';
 
+      - 名称: 变量更新提醒
+        id: a3b4c5d6-e7f8-9012-3456-7890abcdef12
+        启用: true
+        类型: 脚本
+        内容: |-
+          import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴赤王/脚本/变量更新提醒/index.js';
+
       - 名称: 自动更新角色卡
         id: 176b0b3c-b410-4373-8c81-8636a94a0839
         启用: true
