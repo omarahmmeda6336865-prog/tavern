@@ -98,7 +98,11 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "toastr": "^2.1.4",
+<<<<<<< HEAD
     "vue": "^3.5.40",
+=======
+    "vue": "^3.5.39",
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     "vue-final-modal": "^4.5.5",
     "vue-router": "^5.2.0",
     "vue-word-highlighter": "^1.2.6",
