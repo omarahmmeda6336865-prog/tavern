@@ -125,7 +125,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import { useDataStore } from './store';
 
 const store = useDataStore();

@@ -40,6 +40,13 @@ export const Schema = z.object({
       .prefault('待定'),
   }).prefault({}),
 
+  // ===== 性爱Stage系统 =====
+  性爱激活: z.boolean()
+    .prefault(false),
+  性爱阶段: z.coerce.number()
+    .transform(value => _.clamp(value, 0, 7))
+    .prefault(0),
+
   // ===== 刻晴身体状态 =====
   刻晴身体: z.object({
     胸部: z.object({

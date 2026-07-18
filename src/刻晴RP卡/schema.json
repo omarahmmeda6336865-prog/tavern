@@ -76,6 +76,14 @@
         }
       }
     },
+    "性爱激活": {
+      "default": false,
+      "type": "boolean"
+    },
+    "性爱阶段": {
+      "default": 0,
+      "type": "number"
+    },
     "刻晴身体": {
       "default": {},
       "type": "object",
