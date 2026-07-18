@@ -256,11 +256,11 @@
         启用: true
         类型: 脚本
         内容: |-
-          import 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_helper_template/dist/刻晴RP卡/脚本/变量冻结/index.js';
+          import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴RP卡/脚本/变量冻结/index.js
 
       - 名称: Stage推进
         id: b2c3d4e5-f6a7-8901-bcde-f12345678901
         启用: true
         类型: 脚本
         内容: |-
-          import 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_helper_template/dist/刻晴RP卡/脚本/Stage推进/index.js';
+          import 'https://testingcf.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern/dist/刻晴RP卡/脚本/Stage推进/index.js';
