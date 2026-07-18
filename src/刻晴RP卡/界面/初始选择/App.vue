@@ -103,8 +103,18 @@
     <!-- Footer -->
     <div class="px-4 py-3 border-t border-gray-700">
       <div v-if="!confirmed" class="flex items-center justify-between">
+        <button
+          @click="reset"
+          :disabled="completedCount === 0"
+          class="px-3 py-2 rounded-lg text-xs transition-all"
+          :class="completedCount > 0
+            ? 'text-gray-400 hover:text-red-400 hover:bg-red-400/10 cursor-pointer'
+            : 'text-gray-600 cursor-not-allowed'"
+        >
+          重新选取
+        </button>
         <span class="text-xs text-gray-500">
-          {{ completedCount }}/4 项已选择
+          {{ completedCount }}/4
         </span>
         <button
           @click="confirm"
@@ -117,8 +127,14 @@
           确认设定
         </button>
       </div>
-      <div v-else class="text-center text-sm text-green-400 py-2 font-medium">
-        ✓ 设定已完成，可以开始对话了
+      <div v-else class="flex items-center justify-between">
+        <span class="text-sm text-green-400 font-medium">✓ 设定已完成</span>
+        <button
+          @click="reset"
+          class="px-3 py-1 rounded-lg text-xs text-gray-400 hover:text-purple-400 hover:bg-purple-400/10 transition-all"
+        >
+          重新选取
+        </button>
       </div>
     </div>
   </div>
@@ -126,9 +142,6 @@
 
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
-import { useDataStore } from './store';
-
-const store = useDataStore();
 
 const tabs = [
   { key: '权力关系', label: '权力关系' },
@@ -220,13 +233,22 @@ const completedCount = computed(() => {
     + (selections.淫乱程度 ? 1 : 0);
 });
 
-function confirm() {
-  if (!store.data) return;
-  const d = store.data as Record<string, any>;
-  _.set(d, 'stat_data._初始设定.权力关系', selections.权力关系);
-  _.set(d, 'stat_data._初始设定.刻晴真实身份', selections.真实身份);
-  _.set(d, 'stat_data._初始设定.User和刻晴关系', selections.关系);
-  _.set(d, 'stat_data._初始设定.刻晴淫乱程度', selections.淫乱程度);
+async function confirm() {
+  const mvuData = Mvu.getMvuData({ type: 'message', message_id: getCurrentMessageId() });
+  _.set(mvuData, 'stat_data._初始设定.权力关系', selections.权力关系);
+  _.set(mvuData, 'stat_data._初始设定.刻晴真实身份', selections.真实身份);
+  _.set(mvuData, 'stat_data._初始设定.User和刻晴关系', selections.关系);
+  _.set(mvuData, 'stat_data._初始设定.刻晴淫乱程度', selections.淫乱程度);
+  await Mvu.replaceMvuData(mvuData, { type: 'message', message_id: getCurrentMessageId() });
   confirmed.value = true;
+}
+
+function reset() {
+  selections.权力关系 = '';
+  selections.真实身份 = '';
+  selections.关系 = '';
+  selections.淫乱程度 = '';
+  confirmed.value = false;
+  activeTab.value = '权力关系';
 }
 </script>
