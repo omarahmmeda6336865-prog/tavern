@@ -186,6 +186,25 @@
         仅格式显示: true
         仅格式提示词: false
 
+    - 正则名称: '[界面]初始选择'
+      id: c2d3e4f5-a6b7-8901-cdef-234567890123
+      启用: true
+      查找表达式: <InitChoices/>
+      替换为: |-
+        ```
+        <body>
+        <script>
+        $('body').load('https://testingcf.jsdelivr.net/gh/StageDog/tavern_helper_template/dist/刻晴RP卡/界面/初始选择/index.html')
+        </script>
+        </body>
+        ```
+      来源:
+        用户输入: false
+        AI输出: true
+      作用于:
+        仅格式显示: true
+        仅格式提示词: false
+
   酒馆助手:
     脚本库:
       - 名称: mvu

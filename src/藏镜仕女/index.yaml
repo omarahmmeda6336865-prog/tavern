@@ -51,4 +51,4 @@
         启用: true
         类型: 脚本
         内容: |-
-          import 'https://testingcf.jsdelivr.net/gh/StageDog/tavern_helper_template/dist/藏镜仕女/脚本/快速回复/index.js';
+          import 'https://cdn.jsdelivr.net/gh/omarahmmeda6336865-prog/tavern@master/dist/藏镜仕女/脚本/快速回复/index.js';

@@ -6,4 +6,5 @@
 
 她的嘴角微微扬起，带着一丝不同于白日的慵懒。
 
+<InitChoices/>
 <StatusPlaceHolderImpl/>
