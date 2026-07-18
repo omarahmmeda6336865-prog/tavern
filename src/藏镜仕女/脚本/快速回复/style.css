@@ -1,0 +1,93 @@
+.quick-reply-panel {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  animation: quick-reply-fade-in 0.3s ease;
+}
+
+@keyframes quick-reply-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-reply-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 14px;
+  border: 1px solid rgba(120, 180, 240, 0.35);
+  border-radius: 8px;
+  background: rgba(30, 40, 60, 0.7);
+  color: #c8d8f0;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  line-height: 1.4;
+  backdrop-filter: blur(4px);
+}
+
+.quick-reply-btn:hover {
+  background: rgba(60, 100, 180, 0.35);
+  border-color: rgba(140, 200, 255, 0.6);
+  color: #e0eaff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(80, 140, 220, 0.2);
+}
+
+.quick-reply-btn:active {
+  transform: translateY(0);
+  background: rgba(40, 80, 160, 0.4);
+}
+
+.quick-reply-btn.quick-reply-used {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.quick-reply-btn.quick-reply-selected {
+  opacity: 0.6;
+  background: rgba(60, 120, 200, 0.4);
+  border-color: rgba(140, 210, 255, 0.7);
+}
+
+/* 加载动画 */
+.quick-reply-loading {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.quick-reply-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(140, 180, 220, 0.6);
+  animation: quick-reply-bounce 1.2s infinite;
+}
+
+.quick-reply-dot:nth-child(1) { animation-delay: 0s; }
+.quick-reply-dot:nth-child(2) { animation-delay: 0.2s; }
+.quick-reply-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes quick-reply-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "_初始设定": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "权力关系": {
+          "default": "无主导",
+          "type": "string",
+          "enum": [
+            "User主导",
+            "刻晴主导",
+            "无主导"
+          ]
+        },
+        "刻晴真实身份": {
+          "default": "无特殊身份",
+          "type": "string",
+          "enum": [
+            "无特殊身份",
+            "愚人众·雷萤术士",
+            "盗宝团·药剂师",
+            "愚人众·藏镜仕女",
+            "镀金旅团·沙中净水",
+            "愚人众·风役人",
+            "霜夜之继灵者",
+            "璃月青楼花魁",
+            "愚人众秘密娼妓",
+            "被俘的七星间谍"
+          ]
+        },
+        "User和刻晴关系": {
+          "default": "相识",
+          "type": "string",
+          "enum": [
+            "陌生人",
+            "相识",
+            "亲密",
+            "至交"
+          ]
+        },
+        "刻晴淫乱程度": {
+          "default": "贞洁",
+          "type": "string",
+          "enum": [
+            "贞洁",
+            "羞怯",
+            "放荡",
+            "沉沦"
+          ]
+        }
+      }
+    },
+    "全局": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "快感值": {
+          "default": 0,
+          "type": "number"
+        },
+        "高潮次数": {
+          "default": 0,
+          "type": "number"
+        },
+        "当前体位": {
+          "default": "未开始",
+          "type": "string"
+        },
+        "场景": {
+          "default": "待定",
+          "type": "string"
+        }
+      }
+    },
+    "刻晴身体": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "胸部": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "敏感度": {
+              "default": 50,
+              "type": "number"
+            },
+            "开发度": {
+              "default": 0,
+              "type": "number"
+            },
+            "状态": {
+              "default": "未被触碰",
+              "type": "string"
+            }
+          }
+        },
+        "阴部": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "敏感度": {
+              "default": 50,
+              "type": "number"
+            },
+            "开发度": {
+              "default": 0,
+              "type": "number"
+            },
+            "状态": {
+              "default": "未被触碰",
+              "type": "string"
+            }
+          }
+        },
+        "后庭": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "敏感度": {
+              "default": 50,
+              "type": "number"
+            },
+            "开发度": {
+              "default": 0,
+              "type": "number"
+            },
+            "状态": {
+              "default": "未被触碰",
+              "type": "string"
+            }
+          }
+        },
+        "口部": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "敏感度": {
+              "default": 50,
+              "type": "number"
+            },
+            "开发度": {
+              "default": 0,
+              "type": "number"
+            },
+            "状态": {
+              "default": "未被触碰",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "外貌": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "体态": {
+          "default": "待定",
+          "type": "string"
+        },
+        "上身": {
+          "default": "待定",
+          "type": "string"
+        },
+        "下身": {
+          "default": "待定",
+          "type": "string"
+        },
+        "内衣": {
+          "default": "待定",
+          "type": "string"
+        },
+        "配饰": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "装饰": {
+              "default": "无",
+              "type": "string"
+            },
+            "手部": {
+              "default": "无",
+              "type": "string"
+            },
+            "裤袜与鞋履": {
+              "default": "无",
+              "type": "string"
+            }
+          }
+        },
+        "面部": {
+          "default": "待定",
+          "type": "string"
+        }
+      }
+    },
+    "User": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "阴茎": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "勃起程度": {
+              "default": 0,
+              "type": "number"
+            },
+            "敏感度": {
+              "default": 50,
+              "type": "number"
+            },
+            "状态": {
+              "default": "未被触碰",
+              "type": "string"
+            }
+          }
+        },
+        "射精次数": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+$(()=>{waitGlobalInitialized('Mvu').then(()=>{eventOn(Mvu.events.VARIABLE_UPDATE_ENDED,(t,a)=>{const e=_.get(a,'stat_data._初始设定');e&&_.set(t,'stat_data._初始设定',e)})})});
+//# sourceMappingURL=index.js.map

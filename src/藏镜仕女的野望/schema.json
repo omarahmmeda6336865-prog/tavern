@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "当前国度": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "国名": {
+          "default": "蒙德",
+          "type": "string",
+          "enum": [
+            "蒙德",
+            "璃月",
+            "稻妻",
+            "须弥",
+            "枫丹",
+            "至冬",
+            "纳塔",
+            "瑶宫"
+          ]
+        },
+        "当前场景": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    },
+    "当前时间": {
+      "default": "",
+      "type": "string"
+    },
+    "暴露风险": {
+      "default": 0,
+      "type": "number"
+    },
+    "激活对象": {
+      "default": {
+        "仕女团": {},
+        "目标对象": {}
+      },
+      "type": "object",
+      "properties": {
+        "仕女团": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "仕女姓名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "default": "",
+                "type": "string"
+              },
+              "所属阵营": {
+                "default": "",
+                "type": "string"
+              },
+              "当前状态": {
+                "default": "正常态",
+                "type": "string",
+                "enum": [
+                  "伪装态",
+                  "仕女态",
+                  "正常态"
+                ]
+              },
+              "当前装扮": {
+                "default": {},
+                "type": "object",
+                "properties": {
+                  "整体": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "上身": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "下身": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "内衣": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "配件": {
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "鞋履": {
+                        "default": "",
+                        "type": "string"
+                      },
+                      "腿部": {
+                        "default": "",
+                        "type": "string"
+                      },
+                      "手部": {
+                        "default": "",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "其他": {
+                    "default": "",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "目标对象": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "目标姓名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "姓名": {
+                "default": "",
+                "type": "string"
+              },
+              "所属阵营": {
+                "default": "",
+                "type": "string"
+              },
+              "当前状态": {
+                "default": "正常态",
+                "type": "string",
+                "enum": [
+                  "伪装态",
+                  "仕女态",
+                  "正常态"
+                ]
+              },
+              "忠诚度": {
+                "default": 0,
+                "type": "number"
+              },
+              "欲望值": {
+                "default": 0,
+                "type": "number"
+              },
+              "身体感度": {
+                "default": 0,
+                "type": "number"
+              },
+              "当前装扮": {
+                "default": {},
+                "type": "object",
+                "properties": {
+                  "整体": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "上身": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "下身": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "内衣": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "配件": {
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "鞋履": {
+                        "default": "",
+                        "type": "string"
+                      },
+                      "腿部": {
+                        "default": "",
+                        "type": "string"
+                      },
+                      "手部": {
+                        "default": "",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "其他": {
+                    "default": "",
+                    "type": "string"
+                  }
+                }
+              },
+              "称号": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "description": "称号名"
+                },
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "描述": {
+                      "default": "",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "称号"
+            ]
+          }
+        }
+      },
+      "required": [
+        "仕女团",
+        "目标对象"
+      ]
+    }
+  }
+}
